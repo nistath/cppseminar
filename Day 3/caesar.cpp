@@ -6,9 +6,8 @@ string caesarEncrypt(string text, int key) {
     key=key%26;
 
     for(unsigned int i=0; i<text.length(); i++) {
-        if(text[i]=='.' || text[i]=='!' || text[i]=='?' || text[i]==' ') continue;
-
-        text[i]=(text[i]+key-97)%26 + 97;
+        if(text[i]<='z' && text[i]>='a')
+            text[i]=(text[i]+key-97)%26 + 97;
     }
 
     return text;
@@ -18,9 +17,8 @@ string caesarDecrypt(string text, int key) {
     key=key%26;
 
     for(unsigned int i=0; i<text.length(); i++) {
-        if(text[i]=='.' || text[i]=='!' || text[i]=='?' || text[i]==' ') continue;
-
-        text[i]=(text[i]+(26-key)-97)%26 + 97;
+        if(text[i]<='z' && text[i]>='a')
+            text[i]=(text[i]+(26-key)-97)%26 + 97;
     }
 
     return text;
@@ -32,14 +30,14 @@ string caesarAnalysis(string text, int mostFrequent) {
     int freq[26]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
     for(unsigned int i=0; i<text.length(); i++) {
-        if(text[i]=='.' || text[i]=='!' || text[i]=='?' || text[i]==' ') continue;
+        if(text[i]<='z' && text[i]>='a'){
+            int pos=int(text[i])-97;
+            freq[pos]++;
 
-        int pos=int(text[i])-97;
-        freq[pos]++;
-
-        if(freq[pos]>max) {
-            max++;
-            maxLetter=pos+1; // We consider a to be the 1st, not 0th.
+            if(freq[pos]>max) {
+                max++;
+                maxLetter=pos+1; // We consider a to be the 1st, not 0th.
+            }
         }
     }
 
