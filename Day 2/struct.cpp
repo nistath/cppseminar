@@ -8,20 +8,19 @@ struct Person{
     long weight;
     string name;
     int luckynumbers[3];
-};
+} a, k;
 
-int main() {
-    Person home[3];
-    home[0].name = "George";
-    home[0].weight = 64;
-    home[0].luckynumbers[0] = 7;
+int main(){
+    a.name = "Anna";
+    a.height = 1.60;
 
-    home[1].name = "Annie";
-    home[1].age = 17;
-    home[1].luckynumbers[2] = 7;
+    a.luckynumbers[0]=5;
 
-    home[2].name = "John";
-    home[2].height = 1.7853;
+    cout<<a.name<<" "<<a.height<<" "<<a.luckynumbers[0]<<"\n";
 
-    cout<<home[0].name<<" "<<home[1].name<<" "<<home[2].name;
+    k=a;
+
+    k.name="John";
+    cout<<a.name<<"\n"; // a has not changed!
+    cout<<k.name<<" "<<k.height<<" "<<k.luckynumbers[0];
 }

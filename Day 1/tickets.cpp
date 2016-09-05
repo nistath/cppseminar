@@ -1,27 +1,50 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-    int n, a, b, c, d;
-    int price;
-    cin>>n>>a>>b>>c>>d;
+int main(){
+    int N, A, B, C, D;
 
-    price=10*n;
-    if(n>=a)
-        price=n*9;
-    if(price>b*8)
-        price=b*8;
-    if(n>=b)
-        price=n*8;
-    if(price>c*7)
-        price=c*7;
-    if(n>=c)
-        price=n*7;
-    if(price>d*5)
-        price=d*5;
-    if(n>=d)
-        price=n*5;
+    cin>>N>>A>>B>>C>>D;
 
-    cout<<price;
+    int price, temp;
+
+    price = N*10; // No discount (default)
+    if(N>=D){ // Maximum discount
+        price=N*6;
+    }
+    else if(N>=C){ // C discount or buy more to get D discount
+        price=N*7;
+        temp=D*6;
+
+        if(temp<price){
+            price = temp;
+        }
+    }
+    else if(N>=B){ // B discount or buy more to get C discount
+        price=N*8;
+        temp=C*7;
+
+        if(temp<price){
+            price = temp;
+        }
+    }
+    else if(N>=A){ // A discount or buy more to get B discount
+        price=N*9;
+        temp=B*8;
+
+        if(temp<price){
+            price = temp;
+        }
+    }
+    else{
+        price=N*10;
+        temp=A*9;
+
+        if(temp<price){
+            price = temp;
+        }
+    }
+
+    cout<<"You'll pay "<<price;
     return 0;
 }
