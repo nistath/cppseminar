@@ -1,0 +1,9 @@
+{
+	"name": "Cerberus",
+	"slug": "cerberus",
+	"namespace": "Cerberus",
+	"version": "1.0",
+	"author": "Theodore Messinezis",
+	"license": "MIT",
+	"description": "Cerberus is the REST API for MessHub"
+}

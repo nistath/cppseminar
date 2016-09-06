@@ -8,17 +8,24 @@ struct Person{
     long weight;
     string name;
     int luckynumbers[3];
-} a, k;
+};
 
 int main(){
+    Person a;
+
     a.name = "Anna";
     a.height = 1.60;
 
     a.luckynumbers[0]=5;
 
+    if(a.name == "Anna"){
+        cout<<"Hey Anna";
+    }
+
     cout<<a.name<<" "<<a.height<<" "<<a.luckynumbers[0]<<"\n";
 
-    k=a;
+    Person k;
+    k = a;
 
     k.name="John";
     cout<<a.name<<"\n"; // a has not changed!

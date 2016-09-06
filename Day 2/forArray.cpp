@@ -2,10 +2,13 @@
 using namespace std;
 
 int main() {
-    int array[10] = {5, 3, 2, 9, 10, -35, 40, 0, 6, 99};
+    int array[5][4];
 
-    for (int k=0; k<10; k++) {
-        cout<<array[k]<<endl;
+    for (int p=0; p<5; p++){
+        for (int k=0; k<4; k++) {
+            cout<<array[p][k]<<" ";
+        }
+        cout<<"\n";
     }
 
     return 0;

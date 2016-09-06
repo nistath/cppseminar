@@ -1,0 +1,9 @@
+{
+	"name": "Dashboard",
+	"slug": "dashboard",
+	"namespace": "Dashboard",
+	"version": "1.0",
+	"author": "Theodore Messinezis",
+	"license": "MIT",
+	"description": "This is the description for the Dashboard module."
+}
